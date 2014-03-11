@@ -315,8 +315,9 @@
 
 - (void) loadFontListTTF
 {
-    NSMutableDictionary* fontInfo = [NSMutableDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"FontListTTF" ofType:@"plist"]];
-    systemFontList = [fontInfo objectForKey:@"supportedFonts"];
+//    NSMutableDictionary* fontInfo = [NSMutableDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"FontListTTF" ofType:@"plist"]];
+//    systemFontList = [fontInfo objectForKey:@"supportedFonts"];
+    systemFontList = [[NSFontManager sharedFontManager] availableFontFamilies];
     [systemFontList retain];
 }
 
